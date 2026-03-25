@@ -1,0 +1,22 @@
+# Deployment Configuration
+runtime: nodejs
+node_version: "20"
+
+backend:
+  runtime: nodejs
+  directory: backend
+  entry: src/index.js
+  start: node src/index.js
+  install: npm install
+  port: 8001
+
+frontend:
+  runtime: react
+  directory: frontend
+  build: npm run build
+  start: npm start
+  port: 3000
+
+settings:
+  ignore_python: true
+  force_nodejs: true

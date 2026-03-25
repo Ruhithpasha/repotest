@@ -1,0 +1,163 @@
+.font-heading {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-body {
+    font-family: 'Manrope', sans-serif;
+}
+
+/* Hero background overlay */
+.hero-overlay {
+    background: linear-gradient(to right, rgba(10, 22, 40, 0.95), rgba(10, 22, 40, 0.85));
+}
+
+/* Gold glow effect */
+.gold-glow {
+    box-shadow: 0 0 15px rgba(201, 168, 76, 0.3);
+}
+
+/* Button hover lift */
+.btn-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-lift:hover {
+    transform: translateY(-2px);
+}
+
+/* Card hover effect */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+    background: linear-gradient(135deg, #C9A84C 0%, #D4B65D 50%, #C9A84C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Sticky header glass effect */
+.glass-header {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Section fade in animation */
+.section-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Trust badge strip */
+.trust-strip {
+    background: linear-gradient(90deg, #0A1628 0%, #112240 50%, #0A1628 100%);
+}
+
+/* Testimonial card */
+.testimonial-card {
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 80px;
+    font-family: 'Playfair Display', serif;
+    color: #C9A84C;
+    opacity: 0.2;
+    line-height: 1;
+}
+
+/* FAQ accordion */
+.faq-trigger[data-state="open"] .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Dashboard sidebar */
+.sidebar-link {
+    transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+    background: rgba(201, 168, 76, 0.1);
+}
+
+.sidebar-link.active {
+    background: rgba(201, 168, 76, 0.15);
+    border-left: 3px solid #C9A84C;
+}
+
+/* Progress bar */
+.progress-fill {
+    background: linear-gradient(90deg, #C9A84C 0%, #D4B65D 100%);
+    transition: width 0.5s ease;
+}
+
+/* Form input focus */
+.form-input:focus {
+    border-color: #0A1628;
+    box-shadow: 0 0 0 2px rgba(10, 22, 40, 0.1);
+}
+
+/* Noise texture overlay */
+.noise-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+/* Auth layout split */
+.auth-split-left {
+    background: #0A1628;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-split-left::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
+}
+
+/* Mobile menu */
+.mobile-menu-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.mobile-menu-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}

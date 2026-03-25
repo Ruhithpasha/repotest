@@ -1,0 +1,21 @@
+{
+  "runtime": "nodejs",
+  "node_version": "20",
+  "backend": {
+    "runtime": "nodejs",
+    "entry": "src/index.js",
+    "directory": "backend",
+    "start_command": "node src/index.js",
+    "install_command": "npm install",
+    "port": 8001
+  },
+  "frontend": {
+    "runtime": "react",
+    "directory": "frontend",
+    "build_command": "npm run build",
+    "start_command": "npm start",
+    "port": 3000
+  },
+  "ignore_python": true,
+  "ignore_files": ["server.py", "requirements.txt", "__pycache__"]
+}

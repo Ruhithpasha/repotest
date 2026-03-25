@@ -1,0 +1,129 @@
+{
+  "summary": "Programme/Course Management feature testing complete. All 22 backend API tests passed (100%). All frontend UI flows verified: Courses page with stats cards, search/filter, Add/Edit modals with validation, Deactivate confirmation dialog, and Reactivation flow. Deactivation correctly blocked for programmes with active enrolments (409 error).",
+
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+
+  "passed_tests": [
+    "GET /api/admin/programmes - List all programmes with enrollment counts",
+    "GET /api/admin/programmes?active=true - Filter active programmes",
+    "GET /api/admin/programmes?search=Level - Search programmes by name",
+    "GET /api/admin/programmes/stats - Get programme statistics",
+    "POST /api/admin/programmes - Create new programme with all currencies (INR, GBP, USD, EUR)",
+    "POST /api/admin/programmes - Validation: name too short (< 2 chars) rejected",
+    "POST /api/admin/programmes - Validation: price 0 or negative rejected",
+    "POST /api/admin/programmes - Validation: duplicate name (case-insensitive) rejected",
+    "POST /api/admin/programmes - Validation: invalid currency rejected",
+    "PATCH /api/admin/programmes/:id - Update programme successfully",
+    "PATCH /api/admin/programmes/:id - Partial update works",
+    "PATCH /api/admin/programmes/:id - Returns 404 for non-existent ID",
+    "PATCH /api/admin/programmes/:id - Duplicate name on update rejected",
+    "DELETE /api/admin/programmes/:id - Soft delete (deactivate) works",
+    "DELETE /api/admin/programmes/:id - Fails with 409 for programme with active enrolments",
+    "DELETE /api/admin/programmes/:id - Returns 404 for non-existent ID",
+    "PATCH /api/admin/programmes/:id/activate - Reactivate programme works",
+    "PATCH /api/admin/programmes/:id/activate - Returns 404 for non-existent ID",
+    "Auth: Returns 401 without authentication",
+    "UI: Courses page shows in Admin sidebar with BookOpen icon",
+    "UI: Stats cards display Total Programmes, Active, Enrolments, Revenue",
+    "UI: Search input filters programmes by name",
+    "UI: Filter buttons (All/Active/Inactive) work correctly",
+    "UI: Add Programme modal opens with form validation",
+    "UI: Edit Programme modal pre-fills existing data",
+    "UI: Deactivate confirmation dialog shows programme name",
+    "UI: Deactivation blocked with error toast for programme with enrolments",
+    "UI: Currency symbols display correctly (₹, £, $, €)"
+  ],
+
+  "failed_tests": [],
+
+  "test_report_links": [
+    "/app/backend/tests/test_programme_management.py",
+    "/app/test_reports/pytest/test_programme_management.xml"
+  ],
+
+  "action_items": [],
+
+  "critical_code_review_comments": [
+    "All programme CRUD operations implemented correctly with proper validation",
+    "Soft delete pattern used - programmes are deactivated not hard deleted",
+    "Duplicate name check is case-insensitive using PostgreSQL iLike",
+    "Enrolment count properly fetched and displayed for each programme",
+    "Audit logging implemented for all programme actions",
+    "data-testid attributes added to all key interactive elements"
+  ],
+
+  "updated_files": [
+    "/app/backend/tests/test_programme_management.py"
+  ],
+
+  "success_rate": {
+    "backend": "100% (22/22 tests passed)",
+    "frontend": "100% (All UI flows working)"
+  },
+
+  "test_credentials": {
+    "super_admin": "superadmin@plan4growth.uk / password123"
+  },
+
+  "seed_data_present": {
+    "active_programmes": [
+      "Level 7 Diploma in Dental Implantology (GBP £7,999) - 2 enrolments",
+      "Advanced Implant Course (INR ₹75,000) - 0 enrolments"
+    ],
+    "inactive_test_programmes": "13 TEST_ prefixed programmes created during testing (inactive)"
+  },
+
+  "retest_needed": false,
+
+  "should_main_agent_self_test": false,
+
+  "context_for_next_testing_agent": "Programme Management feature fully tested. All /api/admin/programmes/* endpoints functional. Frontend CoursesPage shows correct stats, search/filter, CRUD modals work. DELETE is soft-delete (deactivate). Level 7 programme has 2 enrolments and cannot be deactivated (409 error). TEST_ programmes remain in database as inactive records.",
+
+  "mocked_integrations": {
+    "stripe": "MOCKED - Stripe payments in mock mode",
+    "gohighlevel": "MOCKED - GoHighLevel notifications in mock mode"
+  },
+
+  "features_verified": {
+    "programmes_list": {
+      "endpoint": "GET /api/admin/programmes",
+      "filters": "?active=true/false, ?search=<text>",
+      "fields": ["id", "program_name", "currency", "list_price", "active", "enrollmentCount"]
+    },
+    "programmes_stats": {
+      "endpoint": "GET /api/admin/programmes/stats",
+      "fields": ["totalProgrammes", "activeProgrammes", "totalEnrolments", "totalRevenue"]
+    },
+    "create_programme": {
+      "endpoint": "POST /api/admin/programmes",
+      "validation": ["name 2-150 chars", "price > 0", "currency in INR/GBP/USD/EUR", "unique name"]
+    },
+    "update_programme": {
+      "endpoint": "PATCH /api/admin/programmes/:id",
+      "partial_update": true,
+      "validation": "Same as create"
+    },
+    "deactivate_programme": {
+      "endpoint": "DELETE /api/admin/programmes/:id",
+      "behavior": "Soft delete (sets is_active=false)",
+      "blocked_if": "Programme has active enrolments (returns 409)"
+    },
+    "activate_programme": {
+      "endpoint": "PATCH /api/admin/programmes/:id/activate",
+      "behavior": "Sets is_active=true"
+    },
+    "frontend_ui": {
+      "page": "/portal/admin/courses",
+      "components": ["Stats cards", "Search input", "Filter buttons", "Programmes table", "Add/Edit modals", "Deactivate confirmation"]
+    }
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "name": "Plan4Growth Academy",
+    "mission": "To elevate dental professionals through UK-accredited implantology education.",
+    "aesthetic_archetype": "The Royal Harley (Premium Medical)",
+    "tone": "Authoritative, Academic, Elite, Trustworthy"
+  },
+  "typography": {
+    "font_family_headings": "Playfair Display, serif",
+    "font_family_body": "Manrope, sans-serif",
+    "font_weights": {
+      "headings": "600",
+      "body": "400",
+      "bold": "700"
+    },
+    "scale": {
+      "h1": "text-5xl md:text-6xl lg:text-7xl tracking-tight leading-none",
+      "h2": "text-3xl md:text-4xl lg:text-5xl tracking-tight",
+      "h3": "text-2xl md:text-3xl font-medium",
+      "body_lg": "text-lg md:text-xl leading-relaxed",
+      "body_base": "text-base leading-relaxed text-slate-600",
+      "caption": "text-sm uppercase tracking-widest text-slate-500 font-semibold"
+    },
+    "imports": [
+      "@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');"
+    ]
+  },
+  "colors": {
+    "primary": {
+      "DEFAULT": "#0A1628",
+      "foreground": "#FFFFFF",
+      "hover": "#112240"
+    },
+    "secondary": {
+      "DEFAULT": "#C9A84C",
+      "foreground": "#0A1628",
+      "hover": "#D4B65D"
+    },
+    "background": {
+      "DEFAULT": "#FFFFFF",
+      "subtle": "#F8FAFC",
+      "dark": "#0A1628",
+      "dark_subtle": "#112240"
+    },
+    "text": {
+      "main": "#0F172A",
+      "muted": "#64748B",
+      "inverted": "#FFFFFF",
+      "inverted_muted": "#94A3B8"
+    },
+    "border": {
+      "DEFAULT": "#E2E8F0",
+      "dark": "#1E293B"
+    },
+    "status": {
+      "success": "#059669",
+      "warning": "#D97706",
+      "error": "#DC2626",
+      "info": "#2563EB"
+    }
+  },
+  "design_system_rules": {
+    "border_radius": {
+      "none": "0px",
+      "sm": "0.125rem",
+      "DEFAULT": "0.25rem",
+      "md": "0.375rem",
+      "lg": "0.5rem",
+      "full": "9999px"
+    },
+    "spacing": {
+      "container_padding": "p-6 md:p-12 lg:p-24",
+      "section_gap": "gap-12 md:gap-24",
+      "element_gap": "gap-4 md:gap-6"
+    },
+    "shadows": {
+      "card": "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)",
+      "hover": "0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025)",
+      "glow": "0 0 15px rgba(201, 168, 76, 0.3)"
+    }
+  },
+  "layout_strategies": {
+    "marketing_pages": {
+      "grid_type": "MODE A: THE TETRIS GRID",
+      "description": "Use asymmetric layouts. Avoid centering everything. Use whitespace heavily.",
+      "hero_section": "Split screen or Immersive Background with Text Overlay. Use 'Deep Navy' background for immediate premium feel.",
+      "features_section": "Bento Grid with mixed span sizes. Use 'Gold' for icons or key metrics."
+    },
+    "dashboard_pages": {
+      "grid_type": "MODE B: HIGH DENSITY GRID",
+      "description": "Sidebar navigation (left). Top header for user profile. Main content area with card-based widgets.",
+      "cards": "White background, thin border (slate-200), subtle shadow. Headers in Navy."
+    }
+  },
+  "visual_enhancers": {
+    "gradients": "No full gradients. Use subtle radial glows of Navy or Gold in the background.",
+    "textures": "Use a very subtle 'noise' texture on the Navy background to make it feel like paper/fabric.",
+    "glassmorphism": "Use sparingly. Only for sticky headers or modal overlays. 'Crystal' style: backdrop-blur-xl + border-white/10.",
+    "borders": "Use 'Tracing Beam' effect on pricing cards or key feature cards in Gold."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#C9A84C] text-[#0A1628] hover:bg-[#D4B65D] font-bold px-8 py-3 rounded-md transition-all duration-300 hover:-translate-y-1 shadow-[0_4px_14px_0_rgba(201,168,76,0.39)]",
+      "secondary": "bg-transparent border border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white px-8 py-3 rounded-md transition-all duration-300",
+      "ghost": "text-[#0A1628] hover:text-[#C9A84C] font-medium transition-colors"
+    },
+    "cards": {
+      "marketing": "bg-white p-8 border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 group",
+      "dashboard": "bg-white p-6 rounded-lg border border-slate-200 shadow-sm"
+    },
+    "inputs": {
+      "style": "bg-slate-50 border-slate-200 focus:border-[#0A1628] focus:ring-1 focus:ring-[#0A1628] rounded-md px-4 py-3"
+    }
+  },
+  "image_assets": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1565090567208-c8038cfcf6cd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHw0fHxkZW50aXN0JTIwc3VyZ2VyeSUyMHByb2Zlc3Npb25hbCUyMGNsb3NlJTIwdXB8ZW58MHx8fHwxNzczMDU3Mjk3fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Professional Dental Tools Macro",
+      "usage": "Use with a heavy Navy overlay (opacity-90) for the hero background to create texture without distraction."
+    },
+    "course_context": {
+      "url": "https://images.unsplash.com/photo-1739902526173-06750b78cfb7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwyfHxkZW50aXN0JTIwc3VyZ2VyeSUyMHByb2Zlc3Npb25hbCUyMGNsb3NlJTIwdXB8ZW58MHx8fHwxNzczMDU3Mjk3fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Dentist examining patient",
+      "usage": "Use in the 'Course Details' or 'About' section to show real-world application."
+    },
+    "trust_badges": [
+      {
+        "name": "UK Accreditation",
+        "icon": "shield-check",
+        "description": "Level 7 Diploma Accredited"
+      },
+      {
+        "name": "Hands-on Training",
+        "icon": "users",
+        "description": "Practical workshops included"
+      },
+      {
+        "name": "Global Recognition",
+        "icon": "globe",
+        "description": "Recognized worldwide"
+      }
+    ]
+  },
+  "motion_guidelines": {
+    "page_load": "Fade in up (opacity: 0 -> 1, y: 20 -> 0) with 0.5s duration.",
+    "hover_effects": "Buttons lift (-2px). Cards scale slightly (1.02) or border color changes to Gold.",
+    "scroll": "Use IntersectionObserver to trigger fade-ins for sections as they scroll into view."
+  },
+  "accessibility_checklist": [
+    "Ensure Navy text on White meets 4.5:1 ratio (Passes easily).",
+    "Ensure White text on Gold (#C9A84C) is CHECKED. It might fail. Use Navy text on Gold buttons for better contrast.",
+    "All images must have alt text.",
+    "Forms must have labels."
+  ],
+  "instructions_to_main_agent": [
+    "1. INSTALL FONTS: Add the Google Fonts import to index.css immediately.",
+    "2. CONFIGURE TAILWIND: Update tailwind.config.js with the custom colors (primary: #0A1628, secondary: #C9A84C) and fonts.",
+    "3. SETUP ROUTING: Create the file structure for Public pages (Home, About, Courses, Contact) and Private pages (Dashboard, etc.).",
+    "4. AUTH LAYOUT: Create a specific layout for Login/Register that is split 50/50: Left side is a Testimonial/Hero Image slider (Navy bg), Right side is the Form (White bg).",
+    "5. DASHBOARD LAYOUT: Create a SidebarLayout component that persists across all /dashboard/* routes.",
+    "6. USE SHADCN: Use Shadcn UI for all interactive components (Dialogs, Dropdowns, Forms) but style them with the 'Royal Harley' theme (Navy borders/rings instead of black).",
+    "7. IMAGE USAGE: Use the provided Unsplash URLs. If you need more, use placeholders with descriptive alt text, or call image_selector_tool again."
+  ],
+  "universal_guidelines": [
+    "Do not use generic 'Inter' font for headings. Use 'Playfair Display'.",
+    "Do not use default shadcn radii. Use 'rounded-md' or 'rounded-sm' for a sharper, more professional look.",
+    "Avoid gradients on text unless it's a very subtle Gold shimmer on the main H1.",
+    "Center text ONLY in the Hero or specific 'Callout' sections. Default to Left Align for readability."
+  ]
+}
